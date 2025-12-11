@@ -2,16 +2,13 @@ package org.example;
 
 public class MercadoData {
 
-    // 'market_cap_rank' (ranking)
     private int market_cap_rank;
 
-    // 'price_change_percentage_24h' (variación 24h)
     private double price_change_percentage_24h;
 
-    // 'current_price' (objeto anidado para el precio)
     private CurrentPriceMap current_price;
 
-    // --- Getters requeridos por el programa ---
+    // Getters requeridos
     public int getMarketCapRank() {
         return market_cap_rank;
     }
@@ -20,14 +17,17 @@ public class MercadoData {
         return price_change_percentage_24h;
     }
 
+    // Retorna el objeto que contiene el precio actual
     public CurrentPriceMap getCurrentPriceMap() {
         return current_price;
     }
 
     /**
      * Clase interna POJO para obtener el precio en USD.
+     * Mapea el objeto JSON "current_price" que contiene el valor "usd".
      */
     public class CurrentPriceMap {
+        // Mapea la clave "usd"
         private double usd;
 
         public double getUsd() {
